@@ -1,0 +1,8 @@
+# crontab -u username ./crontab
+SHELL=/bin/sh
+
+# every day at 2:00 am
+0 2 * * * $HOME/idlast_utils/backuper.sh > /dev/null
+
+# each minute
+*/1 * * * * $HOME/idlast_utils/monitor.sh >> $HOME/idlast_utils/monitor.log 2>&1
